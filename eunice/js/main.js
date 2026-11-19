@@ -6,36 +6,43 @@ menuBtn.onclick = function () {
 
 // ===== Testemunhos (só existe na Home) =====
 var testimonials = [
-  { name: "Mafalda Silva", role: "Student", inst: "Polytechnic University of Viseu", rating: 5,
-    quote: "Competing in the EUNICE Alliance Games was unforgettable. It taught me the true value of teamwork, friendship, and international sportsmanship.",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300" },
-  { name: "Camille Lauren", role: "Engineering Student", inst: "Université Polytechnique Hauts-de-France", rating: 4,
-    quote: "The EUNICE Alliance Games in Valenciennes were unforgettable, showing me the power of teamwork and intercultural exchange.",
-    img: "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?w=300" },
-  { name: "Prof. Eero Heikkinen", role: "Assistant Professor", inst: "University of Vaasa", rating: 5,
-    quote: "EUNICE Volunteering Camps offer unique hands-on learning. Seeing students collaborate on real environmental challenges is deeply inspiring.",
-    img: "https://images.unsplash.com/photo-1655249481446-25d575f1c054?w=300" },
-  { name: "Eleni Papadopoulou", role: "Activities Coordinator", inst: "University of the Peloponnese", rating: 5,
-    quote: "EUNICE brings our European university community together through unique cultural and interactive initiatives that develop practical skills and lifelong global networks.",
-    img: "https://images.unsplash.com/photo-1758685734463-98672a67dd1c?w=300" }
+  { name: "Mafalda Silva", role: "Student", inst: "Polytechnic University of Viseu",
+    quote: "Competing in the EUNICE Alliance Games was unforgettable. It taught me the true value of teamwork, friendship, and international sportsmanship." },
+  { name: "Camille Lauren", role: "Engineering Student", inst: "Université Polytechnique Hauts-de-France",
+    quote: "The EUNICE Alliance Games in Valenciennes were unforgettable, showing me the power of teamwork and intercultural exchange." },
+  { name: "Prof. Eero Heikkinen", role: "Assistant Professor", inst: "University of Vaasa",
+    quote: "EUNICE Volunteering Camps offer unique hands-on learning. Seeing students collaborate on real environmental challenges is deeply inspiring." },
+  { name: "Eleni Papadopoulou", role: "Activities Coordinator", inst: "University of the Peloponnese",
+    quote: "EUNICE brings our European university community together through unique cultural and interactive initiatives that develop practical skills and lifelong global networks." },
+  { name: "Lukas Brandt", role: "PhD Candidate", inst: "University of Cantabria",
+    quote: "The joint research seminars connected me with colleagues across Europe and opened collaborations I never expected." },
+  { name: "Sofia Marchetti", role: "Exchange Student", inst: "University of Catania",
+    quote: "My mobility semester through EUNICE changed how I see learning, teamwork and living in another culture." },
+  { name: "Dr. Anna Kowalczyk", role: "Senior Lecturer", inst: "Poznań University of Technology",
+    quote: "Co-teaching with partner universities has enriched my classroom and brought real international perspectives to students." },
+  { name: "Jonas Virtanen", role: "Master's Student", inst: "University of Vaasa",
+    quote: "The Summer School gave me practical skills and friends from a dozen countries, all in just two weeks." },
+  { name: "Marie Dubois", role: "Programme Officer", inst: "Université Polytechnique Hauts-de-France",
+    quote: "EUNICE makes cooperation between our campuses feel natural, with shared goals and a genuinely open community." },
+  { name: "Nikos Alexiou", role: "Volunteer Coordinator", inst: "University of the Peloponnese",
+    quote: "Watching volunteers from different countries work together on local projects is the best proof of what the alliance achieves." }
 ];
 
 var tIndex = 0;
 
-function showTestimonial() {
+function showTestimonial() 
+{
   var t = testimonials[tIndex];
-  document.getElementById("t-img").src = t.img;
-  document.getElementById("t-img").alt = t.name;
-  document.getElementById("t-stars").innerHTML = "★".repeat(t.rating);
   document.getElementById("t-quote").innerHTML = "\"" + t.quote + "\"";
   document.getElementById("t-name").innerHTML = t.name;
   document.getElementById("t-role").innerHTML = t.role;
   document.getElementById("t-inst").innerHTML = t.inst;
 
   var dots = "";
-  for (var i = 0; i < testimonials.length; i++) {
-    dots += "<button class='" + (i === tIndex ? "on" : "") + "' onclick='goTestimonial(" + i + ")'></button>";
-  }
+  for (var i = 0; i < testimonials.length; i++) 
+    {
+      dots += "<button class='" + (i === tIndex ? "on" : "") + "' onclick='goTestimonial(" + i + ")'></button>";
+    }
   document.getElementById("t-dots").innerHTML = dots;
 }
 
